@@ -20,6 +20,8 @@ RUN curl -sLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
     tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 && \
     rm "node-v$NODE_VERSION-linux-x64.tar.xz"
 
+RUN pip install --upgrade pip
+
 RUN pip install coreapi==2.3.0 \
                 boto3==1.4.4 \
                 dj-database-url==0.4.1 \
