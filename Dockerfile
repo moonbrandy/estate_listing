@@ -62,10 +62,7 @@ RUN yum install -y gcc libffi-devel libyaml-devel libmemcached-devel zlib-devel 
                 semantic_version==2.6.0 \
                 structlog==17.1.0 \
                 whitenoise==3.3.0 && \
-    pip install django-storages && \
-    pip install --global-option="--with-libyaml" pyyaml==3.12 && \
-    yum remove --setopt=clean_requirements_on_remove=1 -y gcc libffi-devel libyaml-devel zlib-devel python27-devel
-
+    pip install --global-option="--with-libyaml" pyyaml==3.12 && 
 
 # Install nodejs dependencies
 COPY ./package.json /usr/local/service/package.json
@@ -75,6 +72,7 @@ COPY ./.babelrc /usr/local/service/.babelrc
 COPY ./webpack /usr/local/service/webpack
 COPY ./estate /usr/local/service/estate
 
+RUN pip install django-storages
 RUN webpack --bail --config webpack/webpack.prod.config.js && django-admin collectstatic --noinput
 
 CMD [ "gunicorn", "--config", "python:estate.gunicorn", "estate.wsgi"]
