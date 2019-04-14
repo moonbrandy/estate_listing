@@ -37,7 +37,7 @@ RUN yum install -y gcc libffi-devel libyaml-devel libmemcached-devel zlib-devel 
     pip install coreapi==2.3.0 \
                 boto3==1.4.4 \
                 dj-database-url==0.4.1 \
-                Django==1.10.7 \
+                Django==1.11.20 \
                 django-braces==1.11.0 \
                 django-crispy-forms==1.6.1 \
                 django-cors-headers==2.0.2 \
