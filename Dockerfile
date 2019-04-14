@@ -32,8 +32,8 @@ RUN curl -sLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 # Install python dependencies
 RUN yum install -y gcc libffi-devel libyaml-devel libmemcached-devel zlib-devel postgresql94-devel python27-devel python27-pip && \
     mkdir -p /usr/local/service && \
-    pip install --upgrade pip && \
-    pip install docker-compose && \
+    # pip install --upgrade pip && \
+    # pip install docker-compose && \
     pip install coreapi==2.3.0 \
                 boto3==1.4.4 \
                 dj-database-url==0.4.1 \
