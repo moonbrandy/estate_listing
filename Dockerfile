@@ -62,6 +62,7 @@ RUN yum install -y gcc libffi-devel libyaml-devel libmemcached-devel zlib-devel 
                 semantic_version==2.6.0 \
                 structlog==17.1.0 \
                 whitenoise==3.3.0 && \
+    pip install django-storages && \
     pip install --global-option="--with-libyaml" pyyaml==3.12 && \
     yum remove --setopt=clean_requirements_on_remove=1 -y gcc libffi-devel libyaml-devel zlib-devel python27-devel
 
