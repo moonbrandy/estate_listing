@@ -22,6 +22,8 @@ RUN curl -sLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 RUN pip install --upgrade pip
 
+RUN pip install docker-compose
+
 RUN pip install coreapi==2.3.0 \
                 boto3==1.4.4 \
                 dj-database-url==0.4.1 \
