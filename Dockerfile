@@ -52,8 +52,8 @@ RUN pip install coreapi==2.3.0 \
                 raven==6.1.0 \
                 semantic_version==2.6.0 \
                 structlog==17.1.0 \
-                whitenoise==3.3.0 --ignore-installed  && \
-    pip install --global-option="--with-libyaml" pyyaml==3.12 --ignore-installed
+                whitenoise==3.3.0 && \
+    pip install --global-option="--with-libyaml --ignore-installed" pyyaml==3.12 
 
 COPY ./package.json /usr/local/service/package.json
 RUN npm install
