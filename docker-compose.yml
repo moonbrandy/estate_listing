@@ -18,6 +18,10 @@ service:
     - postgres:postgres
     - consul:consul
     - vault:vault
+  depends_on:
+    - postgres:postgres
+    - consul:consul
+    - vault:vault
 
 postgres:
   image: postgres:9.5
