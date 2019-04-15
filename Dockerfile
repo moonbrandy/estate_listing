@@ -73,6 +73,6 @@ COPY ./webpack /usr/local/service/webpack
 COPY ./estate /usr/local/service/estate
 
 RUN pip install django-storages
-RUN webpack --bail --config webpack/webpack.local.config.js && django-admin collectstatic --noinput
+RUN webpack --bail --config webpack/webpack.prod.config.js && django-admin collectstatic --noinput
 
 CMD [ "gunicorn", "--config", "python:estate.gunicorn", "estate.wsgi"]
